@@ -53,3 +53,22 @@ module.exports.serveFile = {
                 }
           }
 };
+
+module.exports.serveDirectory = {
+  description : "Serving the directory contents",
+  handler : {
+    directory : {
+      path : __dirname+"/../",
+      index : false,
+      listing : true
+    }
+  }
+}
+
+module.exports.serveView = {
+  description : "Hanlding the serving of view to the browser",
+  handler : function(req,reply) {
+    var obj = { name : " Pankaj Bhatt " } ;
+       reply.view('login',obj) ;
+  }
+}
